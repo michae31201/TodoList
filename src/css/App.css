@@ -27,6 +27,23 @@
 .App-link {
   color: #61dafb;
 }
+.add-btn{
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.5rem;
+  background-color: transparent;
+  color: #4A90E2;
+  border-radius: 1rem;
+  border: 5px solid #4A90E2;
+}
+.add-btn:hover{
+  background-color:  #4A90E2;
+  color: white;
+  border: 5px solid rgb(24, 91, 167);
+}
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +52,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+svg{
+  padding-right: .3rem;
 }

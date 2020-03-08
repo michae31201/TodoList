@@ -1,0 +1,51 @@
+.Menu{
+    background-color:#4A90E2;
+    height: 10vh;
+    width: 100%;
+}
+.Menu button{
+    height: 100%;
+    background-color: transparent;
+    font-size: 1.5rem;
+    border: none;
+    font-weight: 600;
+    outline-width: 20px;
+    color: #00408B; 
+    flex: 1;
+    outline-color: rgb(137, 183, 235);
+}
+.btn-group{
+    max-width:480px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+}
+button.selectBtn {
+    color: white;
+    border-bottom: 5px solid #00408B;
+}
+.task-count{
+    border: 2px solid white;
+    border-radius: 5rem;
+    padding: 0rem .35rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin-left: .5rem;
+    color: white;
+}
+#all .task-count{
+    background-color: rgb(236, 45, 45);
+}
+#progress .task-count{
+    background-color: orange;
+}
+#complete .task-count{
+    background-color: green;
+}
+
+@media screen and (max-width:480px){
+    .btn-group{
+        max-width:380px;
+    }
+   
+}

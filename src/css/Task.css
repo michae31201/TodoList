@@ -1,0 +1,61 @@
+.task{
+    width:350px;
+    margin: auto;
+    text-align: left;
+    position: relative;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    margin: .8rem 0;
+}
+.task p{
+    margin:0;
+    padding-top:1rem;
+    display: inline-block;
+}
+.task-fin{
+    background: lightgreen;
+    
+}
+.task-fin p{
+    text-decoration: line-through;
+    text-decoration-style: double;
+    text-decoration-color: red;
+}
+.task-check{
+    zoom: 2;
+    vertical-align: middle;
+    width: 10%;
+}
+.task-edit{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 1.25rem;
+}
+.task-text{
+    display: inline-block;
+    vertical-align: middle;
+    width: 85%;
+}
+.task-name{
+    font-size: 1.5rem;
+    padding-top: 1.2rem;   
+    font-weight: bolder;
+}
+.task-note{
+    font-size: 1.25rem;
+}
+.task-time{
+    text-align: right;
+    font-size: .95rem;
+}
+
+@media screen and (max-width:480px){
+    .task{
+        max-width: 290px;
+    }
+    .task-edit{
+    }
+}

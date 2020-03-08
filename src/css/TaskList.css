@@ -1,0 +1,13 @@
+.tasklist{
+    max-width: 380px;
+    margin: 0 auto;
+    height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+@media screen and (max-width:480px){
+    .tasklist{
+        max-width: 300px;
+        height: calc(80vh - 2rem);
+    }
+}
