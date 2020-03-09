@@ -21,12 +21,14 @@ class TodoStore extends React.Component{
     addTask = (newTask) => {
         const tasks = [...this.state.tasks,newTask]
         this.setState({tasks},this.saveToLocalStorage)
+        alert("新增事項成功!");
     }
     editTask = (editTask) =>{
         const tasks = [...this.state.tasks];
         const index = tasks.findIndex(task => task.id === editTask.id);
         tasks.splice(index,1,editTask);
         this.setState({tasks:[...tasks]},this.saveToLocalStorage);
+        alert("編輯事項成功!");
     }
     changeTaskState = (e,id) => {
         const tasks = [...this.state.tasks];

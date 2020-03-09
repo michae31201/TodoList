@@ -1,5 +1,5 @@
 import React from 'react';
-import AddTask from './AddTask';
+import AddTask from './TaskForm';
 import Menu from './Menu';
 import TodoContext from '../TodoContext';
 import TaskList from './TaskList';

@@ -1,5 +1,5 @@
 import React from 'react';
-import AddTask from './AddTask';
+import TaskForm from './TaskForm';
 import TodoContext from '../TodoContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit,faTasks,} from '@fortawesome/free-solid-svg-icons'
@@ -20,7 +20,7 @@ class Task extends React.Component{
         const {id, task, day, time, note, complete} = this.props;
         return(
            this.state.isEdit ? 
-            <AddTask editData={{id, task, day, time, note, complete}} closeEdit={this.closeEdit}/>
+            <TaskForm editData={{id, task, day, time, note, complete}} closeEdit={this.closeEdit}/>
             :
             <div className={`task ${complete?"task-fin":""}`}>
                 <input type="checkbox" className="task-check" checked={complete} onChange={(e)=>{this.context.changeTaskState(e,id)}}/>

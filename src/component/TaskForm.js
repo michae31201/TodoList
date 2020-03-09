@@ -5,9 +5,9 @@ import TodoContext from '../TodoContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faDownload, faTimes,faTasks,} from '@fortawesome/free-solid-svg-icons'
 import { faCommentDots, faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
-import '../css/AddTask.css';
+import '../css/TaskForm.css';
 
-class AddTask extends React.Component{
+class TaskForm extends React.Component{
     state = {
         id:Date.now(),
         task:"",
@@ -32,18 +32,22 @@ class AddTask extends React.Component{
     }
     saveTask = () => {
         const task = {...this.state}
-        if(this.props.editData){
-            this.context.editTask(task)
+        if(task.task !== ""){
+            if(this.props.editData){
+                this.context.editTask(task)
+            }else{
+                this.context.addTask(task);
+            }
+            this.props.closeEdit();
         }else{
-            this.context.addTask(task);
+            alert("事項不得為空");
         }
-        this.props.closeEdit();
     }
 
     render(){
         const {task, day, time, note} = this.state;
         return(
-            <div className="AddTask">
+            <div className="TaskForm">
                 {
                     this.props.editData?
                         <h2><FontAwesomeIcon icon={faEdit}/>編輯事項</h2>:<h2><FontAwesomeIcon icon={faTasks} />新增事項</h2>
@@ -54,7 +58,7 @@ class AddTask extends React.Component{
                         <FontAwesomeIcon icon={faTasks} />
                         事項
                     </div>
-                    <input type="text" className="input-style" id="task" value = {task} onChange={this.handleChange}/>
+                    <input type="text" className="input-style" id="task" value = {task} required onChange={this.handleChange}/>
                 </div>
                 <div className="form-input">
                     <div  className="input-name">
@@ -83,5 +87,5 @@ class AddTask extends React.Component{
         )
     }
 }
-AddTask.contextType = TodoContext;
-export default AddTask;
+TaskForm.contextType = TodoContext;
+export default TaskForm;
