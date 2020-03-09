@@ -1,6 +1,7 @@
 import React from 'react';
 import App from './component/App';
 import TodoContext from './TodoContext';
+import getSortedTasks from './utils/getSortedTasks';
 
 class TodoStore extends React.Component{
     state = {
@@ -19,12 +20,12 @@ class TodoStore extends React.Component{
         this.setState({mode});
     }
     addTask = (newTask) => {
-        const tasks = [...this.state.tasks,newTask]
+        const tasks =  getSortedTasks([...this.state.tasks,newTask])
         this.setState({tasks},this.saveToLocalStorage)
         alert("新增事項成功!");
     }
     editTask = (editTask) =>{
-        const tasks = [...this.state.tasks];
+        const tasks = getSortedTasks([...this.state.tasks]);
         const index = tasks.findIndex(task => task.id === editTask.id);
         tasks.splice(index,1,editTask);
         this.setState({tasks:[...tasks]},this.saveToLocalStorage);
