@@ -50,7 +50,7 @@ textarea.input-style{
 }
 
 @media screen and (max-width:480px){
-    .AddTask{
+    .TaskForm{
         max-width: 290px;
     }
     .form-input{
