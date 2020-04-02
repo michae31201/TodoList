@@ -39,6 +39,16 @@ class TodoStore extends React.Component{
         tasks[index].complete = e.target.checked;
         this.setState({tasks:[...tasks]},this.saveToLocalStorage)
     }
+    deleteTask = (id) => {
+        console.log(id);
+
+        if(window.confirm("要刪除此事項?")){
+            const tasks = this.state.tasks.filter(task => {return task.id !== id;});
+            window.t = tasks;
+            this.setState({tasks},this.saveToLocalStorage);
+            alert("刪除事項成功!");
+        }
+    }
     saveToLocalStorage = () => {
         const tasks = JSON.stringify(this.state.tasks);
         window.localStorage.setItem("_TodoList",tasks);
@@ -49,8 +59,9 @@ class TodoStore extends React.Component{
         const addTask = this.addTask;
         const editTask = this.editTask;
         const changeTaskState = this.changeTaskState;
+        const deleteTask = this.deleteTask;
         return(
-            <TodoContext.Provider value={{mode, tasks, changeMode, addTask, editTask, changeTaskState}}>
+            <TodoContext.Provider value={{mode, tasks, changeMode, addTask, editTask, changeTaskState, deleteTask}}>
                 <App/>
             </TodoContext.Provider>
         )

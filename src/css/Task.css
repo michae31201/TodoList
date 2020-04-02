@@ -26,10 +26,13 @@
     vertical-align: middle;
     width: 10%;
 }
-.task-edit{
+.task-features{
     position: absolute;
     right: 0;
     top: 0;
+}
+.task-features button
+{
     background-color: transparent;
     border: none;
     font-size: 1.25rem;
